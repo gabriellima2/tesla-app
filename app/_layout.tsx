@@ -1,6 +1,5 @@
 import "react-native-gesture-handler";
-import { Slot } from "expo-router";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { ThemeProvider } from "styled-components/native";
 import {
@@ -10,6 +9,7 @@ import {
 	Rubik_700Bold,
 } from "@expo-google-fonts/rubik";
 
+import { TabRoutes } from "@/routes/TabRoutes";
 import { theme } from "@/styles/theme";
 
 export default function RootLayout() {
@@ -22,13 +22,7 @@ export default function RootLayout() {
 	return (
 		<ThemeProvider theme={theme}>
 			<StatusBar style="light" />
-			{!fontsLoaded ? (
-				<Text>Carregando...</Text>
-			) : (
-				<View>
-					<Slot />
-				</View>
-			)}
+			{!fontsLoaded ? <Text>Carregando...</Text> : <TabRoutes />}
 		</ThemeProvider>
 	);
 }
