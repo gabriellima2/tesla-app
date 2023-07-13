@@ -2,7 +2,7 @@ export type Theme = typeof theme;
 
 export const theme = {
 	colors: {
-		main: "#24272C",
+		main: "#27292D",
 		text: {
 			primary: "#EEEEEE",
 			secondary: "#7F8493",
@@ -19,7 +19,11 @@ export const theme = {
 			},
 		},
 		gradients: {
-			primary: {
+			background: {
+				from: "#2A2D32",
+				to: "#131313",
+			},
+			brand: {
 				from: "#2FB8FF",
 				to: "#9EECD9",
 			},

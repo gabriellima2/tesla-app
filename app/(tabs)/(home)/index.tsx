@@ -1,11 +1,11 @@
 import { Stack } from "expo-router";
-import { Text } from "react-native";
+import { Typography } from "@/components";
 
 export default function Home() {
 	return (
 		<>
 			<Stack.Screen options={{ headerShown: false }} />
-			<Text>Hello, World!</Text>
+			<Typography.Title>Hello, World!</Typography.Title>
 		</>
 	);
 }
