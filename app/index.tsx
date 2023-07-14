@@ -1,12 +1,12 @@
 import { Stack } from "expo-router";
-import { ContainerWithDefaultSpaces, Typography } from "@/components";
+import { ContainerWithDefaultSpaces, CurrentCar } from "@/components";
 
 export default function Page() {
 	return (
 		<>
 			<Stack.Screen options={{ title: "" }} />
 			<ContainerWithDefaultSpaces>
-				<Typography.Title>Hello</Typography.Title>
+				<CurrentCar model="Cybertruck" />
 			</ContainerWithDefaultSpaces>
 		</>
 	);
