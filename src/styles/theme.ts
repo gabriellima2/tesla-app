@@ -37,6 +37,7 @@ export const theme = {
 		},
 		secondary: {
 			extralight: "Jost_200ExtraLight",
+			light: "Jost_300Light",
 		},
 	},
 	fontSizes: {
