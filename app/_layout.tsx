@@ -1,5 +1,6 @@
 import "react-native-gesture-handler";
 import { Text } from "react-native";
+import { Slot } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import styled, { ThemeProvider } from "styled-components/native";
 import {
@@ -9,8 +10,7 @@ import {
 	Rubik_700Bold,
 } from "@expo-google-fonts/rubik";
 
-import { BackgroundGradient } from "@/components";
-import { TabRoutes } from "@/routes/TabRoutes";
+import { BackgroundGradient, ContainerWithDefaultSpaces } from "@/components";
 import { theme } from "@/styles/theme";
 
 export default function RootLayout() {
@@ -25,7 +25,9 @@ export default function RootLayout() {
 			<StatusBar style="light" />
 			<SafeContainer>
 				<BackgroundGradient>
-					{!fontsLoaded ? <Text>Carregando...</Text> : <TabRoutes />}
+					<ContainerWithDefaultSpaces>
+						{!fontsLoaded ? <Text>Carregando...</Text> : <Slot />}
+					</ContainerWithDefaultSpaces>
 				</BackgroundGradient>
 			</SafeContainer>
 		</ThemeProvider>

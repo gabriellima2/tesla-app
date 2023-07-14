@@ -41,8 +41,8 @@ const modifiers: Modifiers<keyof ContainerWithDefaultSpacesProps> = {
 export const ContainerWithDefaultSpaces = styled.View<ContainerWithDefaultSpacesProps>`
 	${({
 		theme,
-		horizontalSpacing,
-		verticalSpacing,
+		horizontalSpacing = true,
+		verticalSpacing = true,
 		topSpacing,
 		bottomSpacing,
 		leftSpacing,
