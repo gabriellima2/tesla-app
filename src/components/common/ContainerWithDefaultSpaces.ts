@@ -13,28 +13,28 @@ type ContainerWithDefaultSpacesProps = {
 };
 
 const STATUSBAR_HEIGHT =
-	Platform.OS === "ios" ? 28 : NativeModules.StatusBarManager.HEIGHT + 28;
+	Platform.OS === "ios" ? 32 : NativeModules.StatusBarManager.HEIGHT + 32;
 
 const modifiers: Modifiers<keyof ContainerWithDefaultSpacesProps> = {
 	horizontalSpacing: (theme) => css`
-		padding-left: ${theme.spaces[7]};
-		padding-right: ${theme.spaces[7]};
+		padding-left: ${theme.spaces[10]};
+		padding-right: ${theme.spaces[10]};
 	`,
 	verticalSpacing: (theme) => css`
 		padding-top: ${STATUSBAR_HEIGHT}px;
-		padding-bottom: ${theme.spaces[7]};
+		padding-bottom: ${theme.spaces[8]};
 	`,
 	topSpacing: () => css`
 		padding-top: ${STATUSBAR_HEIGHT}px;
 	`,
 	bottomSpacing: (theme) => css`
-		padding-bottom: ${theme.spaces[7]};
+		padding-bottom: ${theme.spaces[8]};
 	`,
 	leftSpacing: (theme) => css`
-		padding-left: ${theme.spaces[7]};
+		padding-left: ${theme.spaces[10]};
 	`,
 	rightSpacing: (theme) => css`
-		padding-right: ${theme.spaces[7]};
+		padding-right: ${theme.spaces[10]};
 	`,
 };
 

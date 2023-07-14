@@ -4,44 +4,45 @@ export const theme = {
 	colors: {
 		main: "#27292D",
 		text: {
-			primary: "#EEEEEE",
-			secondary: "#7F8493",
+			primary: "#FDFDFD",
+			secondary: "#7F8489",
 		},
 		utils: {
+			highlight: "#ffffff",
 			shadow: {
-				dark: "#000000",
-				light: "#FFFFFF",
+				dark: "#1F2427",
+				light: "#485057",
 			},
 			elements: {
-				primary: "#101113",
-				secondary: "#2B2F33",
-				tertiary: "#2A2D31",
+				primary: "#2C3036",
+				secondary: "#31343C",
 			},
 		},
 		gradients: {
 			background: {
-				from: "#2A2D32",
-				to: "#131313",
+				from: "#353A40",
+				to: "#16171B",
 			},
 			brand: {
-				from: "#2FB8FF",
-				to: "#9EECD9",
+				from: "#005EA3",
+				to: "#11A8FD",
 			},
 		},
 	},
 	fontFamily: {
 		main: {
-			regular: "Rubik_400Regular",
-			semibold: "Rubik_600SemiBold",
-			bold: "Rubik_700Bold",
+			regular: "Lato_400Regular",
+			bold: "Lato_700Bold",
+			black: "Lato_900Black",
+		},
+		secondary: {
+			extralight: "Jost_200ExtraLight",
 		},
 	},
 	fontSizes: {
-		sm: "13px",
-		regular: "17px",
-		medium: "20px",
-		xl: "28px",
-		"2xl": "34px",
+		regular: "18px",
+		medium: "24px",
+		xl: "50px",
 	},
 	spaces: {
 		1: "4px",
@@ -54,9 +55,5 @@ export const theme = {
 		8: "32px",
 		9: "36px",
 		10: "40px",
-	},
-	rounded: {
-		1: "20px",
-		2: "40px",
 	},
 };

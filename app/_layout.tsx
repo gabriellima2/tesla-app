@@ -1,23 +1,25 @@
 import "react-native-gesture-handler";
 import { Text } from "react-native";
-import { Slot } from "expo-router";
+import { Stack } from "expo-router";
 import { StatusBar } from "expo-status-bar";
 import styled, { ThemeProvider } from "styled-components/native";
 import {
 	useFonts,
-	Rubik_400Regular,
-	Rubik_600SemiBold,
-	Rubik_700Bold,
-} from "@expo-google-fonts/rubik";
+	Lato_400Regular,
+	Lato_700Bold,
+	Lato_900Black,
+} from "@expo-google-fonts/lato";
+import { Jost_200ExtraLight } from "@expo-google-fonts/jost";
 
-import { BackgroundGradient, ContainerWithDefaultSpaces } from "@/components";
+import { BackgroundGradient } from "@/components";
 import { theme } from "@/styles/theme";
 
 export default function RootLayout() {
 	const [fontsLoaded] = useFonts({
-		Rubik_400Regular,
-		Rubik_600SemiBold,
-		Rubik_700Bold,
+		Lato_400Regular,
+		Lato_700Bold,
+		Lato_900Black,
+		Jost_200ExtraLight,
 	});
 
 	return (
@@ -25,9 +27,22 @@ export default function RootLayout() {
 			<StatusBar style="light" />
 			<SafeContainer>
 				<BackgroundGradient>
-					<ContainerWithDefaultSpaces>
-						{!fontsLoaded ? <Text>Carregando...</Text> : <Slot />}
-					</ContainerWithDefaultSpaces>
+					{!fontsLoaded ? (
+						<Text>Carregando...</Text>
+					) : (
+						<Stack
+							screenOptions={{
+								headerShadowVisible: false,
+								headerTitleStyle: {
+									color: theme.colors.text.primary,
+									fontFamily: theme.fontFamily.main.bold,
+									fontSize: 28,
+								},
+								headerStyle: { backgroundColor: "transparent" },
+								contentStyle: { backgroundColor: "transparent" },
+							}}
+						/>
+					)}
 				</BackgroundGradient>
 			</SafeContainer>
 		</ThemeProvider>

@@ -4,6 +4,6 @@ export const Title = styled.Text`
 	${({ theme }) => css`
 		color: ${theme.colors.text.primary};
 		font-size: ${theme.fontSizes.xl};
-		font-family: ${theme.fontFamily.main.bold};
+		font-family: ${theme.fontFamily.main.black};
 	`}
 `;
