@@ -4,6 +4,7 @@ import styled, { css } from "styled-components/native";
 import {
 	ContainerWithDefaultSpaces,
 	CurrentCarDetails,
+	ACStatusPreview,
 	CurrentCar,
 } from "@/components";
 
@@ -11,7 +12,7 @@ export default function Page() {
 	return (
 		<>
 			<Stack.Screen options={{ title: "" }} />
-			<ContainerWithDefaultSpaces>
+			<Container>
 				<Content>
 					<CurrentCar model="Cybertruck" />
 					<CurrentCarDetails
@@ -19,11 +20,18 @@ export default function Page() {
 						image={{ src: require("../public/assets/car.png") }}
 					/>
 				</Content>
-				<Footer></Footer>
-			</ContainerWithDefaultSpaces>
+				<Footer>
+					<ACStatusPreview />
+				</Footer>
+			</Container>
 		</>
 	);
 }
+
+const Container = styled(ContainerWithDefaultSpaces)`
+	flex: 1;
+	justify-content: space-between;
+`;
 
 const Content = styled.View`
 	${({ theme }) => css`
@@ -33,6 +41,4 @@ const Content = styled.View`
 	`}
 `;
 
-const Footer = styled.View`
-	flex: 1;
-`;
+const Footer = styled.View``;
