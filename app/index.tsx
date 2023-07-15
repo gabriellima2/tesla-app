@@ -1,11 +1,13 @@
 import { Stack } from "expo-router";
 import styled, { css } from "styled-components/native";
+import { MaterialIcons } from "@expo/vector-icons";
 
 import {
 	ContainerWithDefaultSpaces,
 	CurrentCarDetails,
 	ACStatusPreview,
 	CurrentCar,
+	BaseCheckbox,
 } from "@/components";
 
 export default function Page() {
@@ -22,6 +24,9 @@ export default function Page() {
 				</Content>
 				<Footer>
 					<ACStatusPreview />
+					<BaseCheckbox
+						Icon={(params) => <MaterialIcons name="lock-outline" {...params} />}
+					/>
 				</Footer>
 			</Container>
 		</>

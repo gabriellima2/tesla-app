@@ -10,8 +10,9 @@ export const theme = {
 		utils: {
 			highlight: "#ffffff",
 			shadow: {
-				dark: "#1F2427",
-				light: "#485057",
+				100: "#1F2427",
+				200: "#2F393D",
+				300: "#485057",
 			},
 			elements: {
 				primary: "#2C3036",
@@ -26,6 +27,10 @@ export const theme = {
 			brand: {
 				from: "#005EA3",
 				to: "#11A8FD",
+			},
+			disabled: {
+				from: "#2F353A",
+				to: "#1C1F22",
 			},
 		},
 	},
