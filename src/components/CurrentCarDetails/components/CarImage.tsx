@@ -22,7 +22,6 @@ const Container = styled.Image`
 	width: ${width}px;
 	height: 300px;
 	object-fit: contain;
-	position: absolute;
-	top: 80px;
-	right: -20%;
+	top: -140px;
+	right: -5%;
 `;

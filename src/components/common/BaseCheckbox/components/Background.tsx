@@ -1,31 +1,19 @@
 import { type ReactNode } from "react";
 import { type ViewProps } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
-import styled, { useTheme } from "styled-components/native";
+import styled from "styled-components/native";
 
-import { theme } from "@/styles/theme";
+import { useGradientColor, type UseGradientColorParams } from "../hooks";
 
-type BackgroundProps = Pick<ViewProps, "style"> & {
-	isChecked: boolean;
-	inverted?: boolean;
-	children: ReactNode;
-};
-
-type GradientType = keyof Pick<
-	(typeof theme)["colors"]["gradients"],
-	"brand" | "disabled"
->;
+type BackgroundProps = Pick<ViewProps, "style"> &
+	Pick<UseGradientColorParams, "hasInvertedColor"> & {
+		isChecked: boolean;
+		children: ReactNode;
+	};
 
 export const Background = (props: BackgroundProps) => {
-	const { isChecked, inverted, children, ...rest } = props;
-	const { colors } = useTheme();
-
-	const gradient: GradientType = isChecked ? "brand" : "disabled";
-	const color =
-		inverted && isChecked
-			? [colors.gradients[gradient].to, colors.gradients[gradient].from]
-			: [colors.gradients[gradient].from, colors.gradients[gradient].to];
-
+	const { isChecked, hasInvertedColor, children, ...rest } = props;
+	const color = useGradientColor({ isChecked, hasInvertedColor });
 	return (
 		<Container {...rest} colors={color} start={{ x: 0.1, y: 0.2 }}>
 			{children}

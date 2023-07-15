@@ -1,10 +1,7 @@
 import { PressableProps } from "react-native";
 import styled, { useTheme } from "styled-components/native";
 
-import {
-	useBaseCheckbox,
-	type UseBaseCheckboxParams,
-} from "./hooks/use-base-checkbox";
+import { useBaseCheckbox, type UseBaseCheckboxParams } from "./hooks";
 import { Background } from "./components";
 
 type IconParams = { color: string; isChecked: boolean; size: number };
@@ -29,8 +26,8 @@ export const BaseCheckbox = (props: BaseCheckboxProps) => {
 			accessibilityState={{ disabled: !!disabled, checked: isChecked }}
 			onPress={handleChange}
 		>
-			<Stroke inverted isChecked={isChecked}>
-				<Stroke inverted isChecked={isChecked}>
+			<Stroke hasInvertedColor isChecked={isChecked}>
+				<Stroke hasInvertedColor isChecked={isChecked}>
 					<Background isChecked={isChecked}>
 						<Icon
 							size={24}
