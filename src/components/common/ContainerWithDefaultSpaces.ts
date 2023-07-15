@@ -42,7 +42,7 @@ export const ContainerWithDefaultSpaces = styled.View<ContainerWithDefaultSpaces
 	${({
 		theme,
 		horizontalSpacing = true,
-		verticalSpacing = true,
+		verticalSpacing,
 		topSpacing,
 		bottomSpacing,
 		leftSpacing,

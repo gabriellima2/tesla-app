@@ -1,20 +1,19 @@
 import { Stack } from "expo-router";
 import styled, { css } from "styled-components/native";
-import { MaterialIcons } from "@expo/vector-icons";
 
 import {
 	ContainerWithDefaultSpaces,
 	CurrentCarDetails,
 	ACStatusPreview,
 	CurrentCar,
-	BaseCheckbox,
+	CarLockControl,
 } from "@/components";
 
 export default function Page() {
 	return (
 		<>
 			<Stack.Screen options={{ title: "" }} />
-			<Container>
+			<Container bottomSpacing>
 				<Content>
 					<CurrentCar model="Cybertruck" />
 					<CurrentCarDetails
@@ -24,9 +23,7 @@ export default function Page() {
 				</Content>
 				<Footer>
 					<ACStatusPreview />
-					<BaseCheckbox
-						Icon={(params) => <MaterialIcons name="lock-outline" {...params} />}
-					/>
+					<CarLockControl />
 				</Footer>
 			</Container>
 		</>
@@ -46,4 +43,9 @@ const Content = styled.View`
 	`}
 `;
 
-const Footer = styled.View``;
+const Footer = styled.View`
+	${({ theme }) => css`
+		align-items: center;
+		gap: ${theme.spaces[10]};
+	`}
+`;
