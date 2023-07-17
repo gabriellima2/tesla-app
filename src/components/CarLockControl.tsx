@@ -24,6 +24,7 @@ export const CarLockControl = () => {
 const Container = styled.View`
 	${({ theme }) => css`
 		align-items: center;
+		justify-content: space-between;
 		gap: ${theme.spaces[4]};
 	`}
 `;

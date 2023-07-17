@@ -31,14 +31,17 @@ export default function Page() {
 }
 
 const Container = styled(ContainerWithDefaultSpaces)`
-	flex: 1;
-	justify-content: space-between;
+	${({ theme }) => css`
+		flex: 1;
+		gap: ${theme.spaces[4]};
+		justify-content: space-between;
+	`}
 `;
 
 const Content = styled.View`
 	${({ theme }) => css`
 		flex: 1;
-		gap: ${theme.spaces[8]};
+		gap: ${theme.spaces[4]};
 		justify-content: space-between;
 	`}
 `;
@@ -46,6 +49,6 @@ const Content = styled.View`
 const Footer = styled.View`
 	${({ theme }) => css`
 		align-items: center;
-		gap: ${theme.spaces[10]};
+		gap: ${theme.spaces[6]};
 	`}
 `;
