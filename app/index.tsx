@@ -1,5 +1,6 @@
 import { Stack } from "expo-router";
 import styled, { css } from "styled-components/native";
+import Animated, { FadeIn } from "react-native-reanimated";
 
 import {
 	ContainerWithDefaultSpaces,
@@ -11,7 +12,11 @@ import {
 
 export default function Page() {
 	return (
-		<>
+		<Animated.View
+			entering={FadeIn.duration(200).delay(100)}
+			exiting={FadeIn.duration(200)}
+			style={{ flex: 1 }}
+		>
 			<Stack.Screen options={{ title: "" }} />
 			<Container bottomSpacing>
 				<Content>
@@ -26,7 +31,7 @@ export default function Page() {
 					<CarLockControl />
 				</Footer>
 			</Container>
-		</>
+		</Animated.View>
 	);
 }
 

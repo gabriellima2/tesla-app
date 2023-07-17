@@ -1,4 +1,6 @@
 import styled from "styled-components/native";
+import Animated, { SlideInRight } from "react-native-reanimated";
+
 import { CarImage, CarBatteryInKilometers } from "./components";
 
 type CurrentCarDetailsProps = {
@@ -11,7 +13,12 @@ export const CurrentCarDetails = (props: CurrentCarDetailsProps) => {
 	return (
 		<Container>
 			<CarBatteryInKilometers value={batteryValue} />
-			<CarImage {...image} />
+			<Animated.View
+				entering={SlideInRight.duration(400)}
+				exiting={SlideInRight.duration(400)}
+			>
+				<CarImage {...image} />
+			</Animated.View>
 		</Container>
 	);
 };
